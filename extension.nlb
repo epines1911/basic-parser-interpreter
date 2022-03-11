@@ -1,0 +1,4 @@
+BEGIN {
+   ZEROS 1 3 $A
+   CUT "HELLO" 2
+}

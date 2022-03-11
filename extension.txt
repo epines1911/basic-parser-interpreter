@@ -1,0 +1,10 @@
+# new feature: "ZEROS" in <CREATE>
+# Create an array full of zeros
+<CREATE> ::= "ZEROS" <ROWS> <COLS> <VARNAME>
+
+# new feature: <CUT> in <INSTRC>
+# Remain 0-<INTEGER> charactors in a <STRING>, 
+# and cut the other charactors after the index <INTEGER> 
+# e.g. CUT "hello" 2 will be "hel" (index 2 is the first 'l')
+<INSTRC> ::= <CUT> | <PRINT> | <SET> | <CREATE> | <LOOP>
+<CUT> ::= "CUT" <STRING> <INTEGER>
