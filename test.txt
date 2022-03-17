@@ -1,0 +1,33 @@
+BEGIN {
+   READ "test.arr" $A
+   ONES 1 2 $A 
+   SET $F := 1 ;
+   SET $C := $F U-NOT $F U-EIGHTCOUNT $A B-AND $A B-OR $A B-GREATER $A B-LESS $A B-ADD $A B-TIMES $A B-EQUALS ;
+   LOOP $I 3 {
+       SET $F := 1 ;
+   }
+}
+
+$A should be:
+0 1 0 after READ "test.arr"
+1 1 after ONES
+
+$F should be:
+1
+
+$C should be:
+0 after U-NOT
+0 after U-NOT U-EIGHTCOUNT
+0 0 after $C $A B-AND
+1 1 after $C $A B-OR
+0 0 after $C $A B-GREATER
+1 1 after $C $A B-LESS
+2 2 after $C $A B-ADD
+2 2 after $C $A B-TIMES
+0 0 after $C $A B-EQUALS
+
+$I should be:
+1
+2
+3
+(add 1 every time)

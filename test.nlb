@@ -1,0 +1,9 @@
+BEGIN {
+   READ "test.arr" $A
+   ONES 1 2 $A 
+   SET $F := 1 ;
+   SET $C := $F U-NOT $F U-EIGHTCOUNT $A B-AND $A B-OR $A B-GREATER $A B-LESS $A B-ADD $A B-TIMES $A B-EQUALS ;
+   LOOP $I 3 {
+       SET $F := 1 ;
+   }
+}
